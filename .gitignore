@@ -1,0 +1,8 @@
+node_modules
+*.pdf
+*.doc
+*.docx
+.DS_Store
+gulpfile.js
+package-lock.json
+package.json
