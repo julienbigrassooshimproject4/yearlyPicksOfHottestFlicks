@@ -54,10 +54,13 @@ movieApp.getMovies = function(userInput) {
       const movies = data1[0];
       const posterConfig = data2[0];
 
-      
+      console.log(movies, posterConfig);
 
     })
 }
+
+
+
   // .then(function(movies){ 
   //   $('.movieInfo').empty();
   //   let userMovie = movies.results[0];
@@ -65,16 +68,12 @@ movieApp.getMovies = function(userInput) {
   //   console.log(userMovie);
   // }); 
 
-
-  
   // movieApp.getPosters.then(function(configData) {
   //   const baseUrl = configData.images.base_url;
   //   //poster width of 500px
   //   const posterSize = configData.images.poster_sizes[4];
   //   console.log(posterSize);
   // })
-
-
 
 // movieApp.getPosters();
 
@@ -83,8 +82,8 @@ movieApp.getMovies = function(userInput) {
 movieApp.displayMovie = function(movie) {
   const $movieTitle = $('<h2>').text(movie.title);
   const $voteCount = $('<p>').text(movie.vote_count);
-  const $voteAverage = movie.vote_average;
-  const $overview = movie.overview;
+  const $voteAverage = $('<p>').text(movie.vote_average);
+  const $overview = $('<p>').text(movie.overview);
   $('.movieInfo').append($movieTitle, $voteCount, $voteAverage, $overview);
 }
 
