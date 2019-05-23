@@ -23,9 +23,11 @@ movieApp.userSubmission = function() {
 // Make an ajax call to Movie API
 // - “primary_release_year” is the parameter of the query
 movieApp.url = 'https://api.themoviedb.org/3/discover/movie';
+movieApp.configUrl = 'https://api.themoviedb.org/3/configuration';
 movieApp.key = "852b1b7792f98b1e44b5aa474ea2ed2b";
+
 movieApp.getMovies = function(userInput) {
-  $.ajax({
+  movieApp.ajaxCall = $.ajax({
     url: movieApp.url,
     method: 'GET',
     dataType: 'json',
@@ -35,17 +37,52 @@ movieApp.getMovies = function(userInput) {
       sort_by: "vote_count.desc"
       //by default, data is sorted by descending order of popularity in the API
     }
-  }).then(function(movies){ 
-    $('.movieInfo').empty();
-    let userMovie = movies.results[0];
-    movieApp.displayMovie(userMovie)
-  }); 
+  })
+  
+  movieApp.getPosters =
+  $.ajax({
+    url: movieApp.configUrl,
+    method: 'GET',
+    dataType: 'json',
+    data: {
+      api_key: movieApp.key
+    }
+  });
+
+  $.when(movieApp.ajaxCall, movieApp.getPosters)
+    .then(function (data1, data2) {
+      const movies = data1[0];
+      const posterConfig = data2[0];
+
+      
+
+    })
 }
+  // .then(function(movies){ 
+  //   $('.movieInfo').empty();
+  //   let userMovie = movies.results[0];
+  //   movieApp.displayMovie(userMovie)
+  //   console.log(userMovie);
+  // }); 
+
+
+  
+  // movieApp.getPosters.then(function(configData) {
+  //   const baseUrl = configData.images.base_url;
+  //   //poster width of 500px
+  //   const posterSize = configData.images.poster_sizes[4];
+  //   console.log(posterSize);
+  // })
+
+
+
+// movieApp.getPosters();
+
 
 // - display the data on the page- jquery append movie name and other basic movie info to a previously hidden section, which we will auto-scroll to
 movieApp.displayMovie = function(movie) {
-  const $movieTitle = movie.title;
-  const $voteCount = movie.vote_count;
+  const $movieTitle = $('<h2>').text(movie.title);
+  const $voteCount = $('<p>').text(movie.vote_count);
   const $voteAverage = movie.vote_average;
   const $overview = movie.overview;
   $('.movieInfo').append($movieTitle, $voteCount, $voteAverage, $overview);
