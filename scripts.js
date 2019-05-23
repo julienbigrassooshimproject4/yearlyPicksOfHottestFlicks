@@ -3,7 +3,6 @@
 //Pseudo Code
 
 
-
 // - create an app namespace called movieApp that will hold all methods
 const movieApp = {};
 
@@ -14,9 +13,12 @@ const movieApp = {};
 movieApp.userSubmission = function() {
   $('input[type=submit]').on('click', function(e) {
     e.preventDefault();
+    //!!!!!!! ERROR HANDLEEEEE!!!!!!!!!!!!!!!!!!!!!!!!
     const userInput = $('input[type=number]').val();
-
     movieApp.getMovies(userInput);
+
+    //empty the search box
+    $('input[type=number]').val('');
   });
 };
 
@@ -24,10 +26,11 @@ movieApp.userSubmission = function() {
 // - “primary_release_year” is the parameter of the query
 movieApp.url = 'https://api.themoviedb.org/3/discover/movie';
 movieApp.configUrl = 'https://api.themoviedb.org/3/configuration';
-movieApp.key = "852b1b7792f98b1e44b5aa474ea2ed2b";
+movieApp.key = '852b1b7792f98b1e44b5aa474ea2ed2b';
 
 movieApp.getMovies = function(userInput) {
-  movieApp.ajaxCall = $.ajax({
+  //Promise1: Make an ajax call to call movie data for userInput
+  movieApp.movieCall = $.ajax({
     url: movieApp.url,
     method: 'GET',
     dataType: 'json',
@@ -39,7 +42,8 @@ movieApp.getMovies = function(userInput) {
     }
   })
   
-  movieApp.getPosters =
+  //Promise2: Make an ajax call for configuration data for posters (images url & poster sizes)
+  movieApp.configCall =
   $.ajax({
     url: movieApp.configUrl,
     method: 'GET',
@@ -49,48 +53,66 @@ movieApp.getMovies = function(userInput) {
     }
   });
 
-  $.when(movieApp.ajaxCall, movieApp.getPosters)
+  $.when(movieApp.movieCall, movieApp.configCall)
     .then(function (data1, data2) {
+      $(".movieInfo").empty();
+      $(".poster").empty();
+
+      //movie data
       const movies = data1[0];
+      const userMovie = movies.results[0];
+      const posterPath = userMovie.poster_path;
+      //call displayMovie to update the DOM
+      movieApp.displayMovie(userMovie, userInput);
+      
+      //config data for posters
       const posterConfig = data2[0];
+      const baseUrl = posterConfig.images.base_url;
+      //poster width of 500px
+      const posterSize = posterConfig.images.poster_sizes[4];
 
-      console.log(movies, posterConfig);
-
+      //call displayPoster function
+      movieApp.displayPoster(baseUrl, posterSize, posterPath, userMovie);
+  
     })
 }
 
 
-
-  // .then(function(movies){ 
-  //   $('.movieInfo').empty();
-  //   let userMovie = movies.results[0];
-  //   movieApp.displayMovie(userMovie)
-  //   console.log(userMovie);
-  // }); 
-
-  // movieApp.getPosters.then(function(configData) {
-  //   const baseUrl = configData.images.base_url;
-  //   //poster width of 500px
-  //   const posterSize = configData.images.poster_sizes[4];
-  //   console.log(posterSize);
-  // })
-
-// movieApp.getPosters();
-
-
 // - display the data on the page- jquery append movie name and other basic movie info to a previously hidden section, which we will auto-scroll to
-movieApp.displayMovie = function(movie) {
-  const $movieTitle = $('<h2>').text(movie.title);
-  const $voteCount = $('<p>').text(movie.vote_count);
-  const $voteAverage = $('<p>').text(movie.vote_average);
-  const $overview = $('<p>').text(movie.overview);
+movieApp.displayMovie = function(movie, userInput) {
+  const $movieYear = $('.userYear').text(userInput);
+  const $movieTitle = $(`<h3>`).text(movie.title);
+  const $voteCount = $(`<p>`).text(`vote count: ${movie.vote_count}`);
+  const $voteAverage = $(`<p>`).text(`vote average: ${movie.vote_average}`);
+  const $overview = $(`<p>`).text(movie.overview);
   $('.movieInfo').append($movieTitle, $voteCount, $voteAverage, $overview);
 }
+
+//update poster to the DOM
+movieApp.displayPoster = function(url, size, path, movie) {
+  const movieTitle = movie.title;    
+  const posterLink = url + size + path;
+  const $posterContainer = $(`<div>`);
+  //!!!!!!!!!!!!!!!!!!REVISIT ALT TEXT!!!!!!!!!!!!!!!!!!!!!!!!!!
+  const $posterImg = $(`<img src=${posterLink} alt=${movieTitle}/>`);
+  $posterContainer.append($posterImg);
+  $('.poster').append($posterContainer);
+}
+
+
+// reset 
+movieApp.reset = function() {
+  $('button').on("click", function() {
+    location.reload(true);
+  })
+}
+
 
 // - create an init to start movieApp, which will initiate on “click” of submit button
 
 movieApp.init = function() {
   movieApp.userSubmission();
+  movieApp.reset();
 }
 
 //document ready
