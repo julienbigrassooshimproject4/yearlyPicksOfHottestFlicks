@@ -1,3 +1,27 @@
 header {
-    height: 100vh;
+    background-image: linear-gradient(to left, rgba($white, 0.3), rgba($white, 0.3)), url(../assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    section {
+        border: 1px solid purple;
+    }
+    
+    .wrapper {
+        border: 1px solid green;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 5.0rem;
+}
+
+h2 {
+    // color: $primary;
 }

@@ -148,8 +148,43 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 .hide {
   display: none; }
 
+body {
+  font-size: 125%; }
+
+.wrapper {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto; }
+
 h1 {
-  color: red; }
+  font-family: "Bungee Inline", cursive; }
 
 header {
-  height: 100vh; }
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(252, 238, 238, 0.3)), to(rgba(252, 238, 238, 0.3))), url(../assets/background.jpg);
+  background-image: -webkit-linear-gradient(right, rgba(252, 238, 238, 0.3), rgba(252, 238, 238, 0.3)), url(../assets/background.jpg);
+  background-image: -o-linear-gradient(right, rgba(252, 238, 238, 0.3), rgba(252, 238, 238, 0.3)), url(../assets/background.jpg);
+  background-image: linear-gradient(to left, rgba(252, 238, 238, 0.3), rgba(252, 238, 238, 0.3)), url(../assets/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  header section {
+    border: 1px solid purple; }
+  header .wrapper {
+    border: 1px solid green;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+h1 {
+  margin-top: 0;
+  font-size: 5.0rem; }
