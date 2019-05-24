@@ -13,14 +13,49 @@ const movieApp = {};
 movieApp.userSubmission = function() {
   $('input[type=submit]').on('click', function(e) {
     e.preventDefault();
-    //!!!!!!! ERROR HANDLEEEEE!!!!!!!!!!!!!!!!!!!!!!!!
-    const userInput = $('input[type=number]').val();
-    movieApp.getMovies(userInput);
 
-    //empty the search box
-    $('input[type=number]').val('');
+    //prevents default result from appearing if user attempts to submit an empty string
+    if($('input[type=number]').val() !== '') {
+      const userInput = $('input[type=number]').val();
+      movieApp.getMovies(userInput);
+
+      movieApp.scroll('main');
+
+      //empty the search box
+      $('input[type=number]').val('');
+    } else {
+      movieApp.errorHandler();
+    }
   });
 };
+
+//gets called in the if/else statement of user submission
+movieApp.errorHandler = function() {
+  //displays error message
+  $('.warning').removeClass('hide');
+  //removes error message when user clicks into text field
+  $('input[type=number]').on('click', function(){
+    $('.warning').addClass('hide');
+  })
+}
+
+// movieApp.scrollToResult = function () {
+//   $('html, body').animate({
+//     scrollTop: "100vh"
+//   });
+// }
+
+movieApp.scroll = function(section) {
+  $('html, body').animate({
+    scrollTop: ($(section).offset().top)
+  }, 1000);
+}
+
+// movieApp.scrollToTop = function () {
+//   $('html, body').animate({
+//     scrollTop: 0
+//   }, 1000);
+// }
 
 // Make an ajax call to Movie API
 // - “primary_release_year” is the parameter of the query
@@ -77,8 +112,7 @@ movieApp.getMovies = function(userInput) {
     })
 }
 
-
-// - display the data on the page- jquery append movie name and other basic movie info to a previously hidden section, which we will auto-scroll to
+//display the data on the page- jquery append movie name and other basic movie info to a previously hidden section, which we will auto-scroll to
 movieApp.displayMovie = function(movie, userInput) {
   const $movieYear = $('.userYear').text(userInput);
   const $movieTitle = $(`<h3>`).text(movie.title);
@@ -99,17 +133,18 @@ movieApp.displayPoster = function(url, size, path, movie) {
   $('.poster').append($posterContainer);
 }
 
-
 // reset 
 movieApp.reset = function() {
   $('button').on("click", function() {
-    location.reload(true);
+    // location.reload(true);
+    $('.movieInfo').empty()
+    $('.poster').empty();
+    $('.userYear').empty();
+    movieApp.scroll('header');
   })
 }
 
-
 // - create an init to start movieApp, which will initiate on “click” of submit button
-
 movieApp.init = function() {
   movieApp.userSubmission();
   movieApp.reset();

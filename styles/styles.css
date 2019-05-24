@@ -145,5 +145,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip: rect(0 0 0);
   overflow: hidden; }
 
+.hide {
+  display: none; }
+
 h1 {
-  color: red; }
+  color: red;
+  margin: 0; }
+
+header {
+  height: 100vh; }
