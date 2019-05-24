@@ -149,8 +149,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   display: none; }
 
 h1 {
-  color: red;
-  margin: 0; }
+  color: red; }
 
 header {
   height: 100vh; }
