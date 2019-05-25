@@ -1,0 +1,9 @@
+button,
+input[type=submit] {
+    background: $accent;
+    color: $black;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 30px;
+    text-transform: uppercase;
+}

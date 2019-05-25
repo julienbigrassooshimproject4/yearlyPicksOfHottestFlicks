@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Super cool hot movie app</title>
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Open+Sans&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Righteous&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
@@ -13,19 +13,24 @@
 <header>
   <div class="wrapper">
     <section>
-      <h1>super cool <span>hot</span> movie app</h1>
-      <h2>enter a year that is significant to you into the field below, and get the hottest movie of that year!</h2>
+      <div class="title">
+        <h1>super cool <span>hot</span> movie app</h1>
+      </div>
+      <h2>Enter a year that is significant to you into the field below, and get the hottest movie of that year!</h2>
     </section>
 
     <section>
       <form action="">
-        <label for="year">Input a year here!</label>
-        <input type="number" id="year" min="1881" max="2019" placeholder="YYYY">
+        <div class="formTop">
+          <label for="year">Enter a year here:</label>
+          <input type="number" id="year" min="1881" max="2019" placeholder="YYYY">
 
-        <p class='warning hide'>Please enter a valid year!</p>
-
-        <label for="submit" class="visuallyHidden">submit</label>
-        <input type="submit" id="submit" value="submit">
+          <p class='warning hide'>Please enter a valid year!</p>
+        </div>
+        <div class="formBottom">
+          <label for="submit" class="visuallyHidden">submit</label>
+          <input type="submit" id="submit" value="submit">
+        </div>
       </form>
     </section>
   </div>
@@ -41,6 +46,7 @@
 <footer>
   <p>Created by Julien Bigras and Soo Yeon Shim</p>
   <p>Data from The Movie Database (TMDb)</p>
+  <a href="https://www.freepik.com/free-photos-vectors/food">Food photo created by freepik - www.freepik.com</a>
 </footer>
 
 <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
