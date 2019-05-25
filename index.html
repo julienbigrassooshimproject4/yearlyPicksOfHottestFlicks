@@ -23,9 +23,9 @@
       <form action="">
         <div class="formTop">
           <label for="year">Enter a year here:</label>
-          <input type="number" id="year" min="1881" max="2019" placeholder="YYYY">
+          <input type="number" id="year" min="1878" max="2019" placeholder="YYYY">
 
-          <p class='warning hide'>Please enter a valid year!</p>
+          <p class='warning hide'>Please enter a valid year between 1878 and 2019!</p>
         </div>
         <div class="formBottom">
           <label for="submit" class="visuallyHidden">submit</label>
@@ -37,16 +37,22 @@
 </header>
 
 <main>
-  <h2>The hottest movie of <span class="userYear"></span> is:</h2>
-  <div class="poster"></div>
-  <div class="movieInfo" tabindex="0"></div>
-  <button class="reset">Reset</button>
+  <div class="wrapper">
+    <h2>The hottest movie of <span class="userYear"></span> is:</h2>
+    <div class="movieContainer">
+      <div class="poster"></div>
+      <div class="movieInfo" tabindex="0"></div>
+    </div>
+    <button class="reset">Reset</button>
+  </div>
 </main>
 
 <footer>
-  <p>Created by Julien Bigras and Soo Yeon Shim</p>
-  <p>Data from The Movie Database (TMDb)</p>
-  <a href="https://www.freepik.com/free-photos-vectors/food">Food photo created by freepik - www.freepik.com</a>
+  <div class="wrapper">
+    <p>Created by Julien Bigras and Soo Yeon Shim</p>
+    <p>Data from The Movie Database (TMDb)</p>
+    <a href="https://www.freepik.com/free-photos-vectors/food">Food photo created by freepik - www.freepik.com</a>
+  </div>
 </footer>
 
 <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>

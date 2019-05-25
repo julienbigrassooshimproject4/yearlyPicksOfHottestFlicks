@@ -156,9 +156,17 @@ body {
   max-width: 1440px;
   margin: 0 auto; }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
+
 h1 {
   font-family: "Righteous", cursive;
-  color: #0776B3;
+  color: #064A6F;
   text-transform: uppercase; }
 
 button,
@@ -169,6 +177,9 @@ input[type=submit] {
   border-radius: 5px;
   padding: 7px 30px;
   text-transform: uppercase; }
+
+button {
+  display: block; }
 
 header {
   background-image: url(../assets/headerPic.jpg);
@@ -215,17 +226,45 @@ form {
     padding: 5px;
     width: 160px; }
     form input[type=number]::-webkit-input-placeholder {
-      color: #EFECCA; }
+      color: #Eee; }
     form input[type=number]:-ms-input-placeholder {
-      color: #EFECCA; }
+      color: #Eee; }
     form input[type=number]::-ms-input-placeholder {
-      color: #EFECCA; }
+      color: #Eee; }
     form input[type=number]::placeholder {
-      color: #EFECCA; }
+      color: #Eee; }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   margin: 0; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
+
+main {
+  padding-top: 50px;
+  background-color: #064A6F; }
+  main h2 {
+    text-align: center;
+    color: #FFAA3C; }
+
+.movieContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.movieInfo {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(238, 238, 238, 0.3)), to(rgba(238, 238, 238, 0.3)));
+  background: -webkit-linear-gradient(right, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3));
+  background: -o-linear-gradient(right, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3));
+  background: linear-gradient(to left, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3)); }
+
+button {
+  margin: 0 auto; }
+
+footer {
+  background-color: #011627;
+  color: #Eee; }
+  footer p:first-child {
+    margin-top: 0; }
