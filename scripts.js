@@ -54,7 +54,6 @@ movieApp.scrollToTop = function() {
     },1000);
 };
 
-
 // make an ajax call to Movie API
 // -“primary_release_year” is the parameter of the query
 movieApp.url = 'https://api.themoviedb.org/3/discover/movie';
@@ -94,6 +93,11 @@ movieApp.getMovies = function(userInput) {
       //clean up movie Info before loading a new info
       $(".movieInfo").empty();
       $(".poster").empty();
+      $('.userYear').empty();
+
+      //displays the main section which contains the results of the ajax call
+      $('main').removeClass('hide');
+      $('footer').removeClass('hide');
 
       //scroll to the result section
       movieApp.scrollToResult();
@@ -107,7 +111,6 @@ movieApp.getMovies = function(userInput) {
       //call displayMovie to update the DOM
       movieApp.displayMovie(userMovie, userInput);
       
-
       //Promise2 result
       //save config data for posters to variables
       const posterConfig = data2[0];
@@ -129,10 +132,11 @@ movieApp.getMovies = function(userInput) {
 movieApp.displayMovie = function(movie, userInput) {
   $('.userYear').text(userInput);
   const $movieTitle = $(`<h3>`).text(movie.title);
-  const $voteCount = $(`<p>`).text(`vote count: ${movie.vote_count}`);
-  const $voteAverage = $(`<p>`).text(`vote average: ${movie.vote_average}`);
+  const $voteCount = $(`<p>`).text(`Vote Count: ${movie.vote_count}`);
+  const $voteAverage = $(`<p class="voteAverage">`).text(`Vote Average: ${movie.vote_average}`);
+  const $overviewTitle = $(`<p class="overview">`).text(`Overview:`);
   const $overview = $(`<p>`).text(movie.overview);
-  $('.movieInfo').append($movieTitle, $voteCount, $voteAverage, $overview);
+  $('.movieInfo').append($movieTitle, $voteCount, $voteAverage, $overviewTitle, $overview);
 }
 
 //update poster to the DOM
@@ -150,11 +154,7 @@ movieApp.displayPoster = function(url, size, path, movie) {
 // on click reset, go to top and empty the current movie info
 movieApp.reset = function() {
   $('button').on("click", function() {
-    //empty out movie info & poster
-    $('.movieInfo').empty()
-    $('.poster').empty();
-    $('.userYear').empty();
-
+    
     //scroll to top
     movieApp.scrollToTop('header');
   })

@@ -5,7 +5,7 @@ main {
   background-color: $secondary;
 
   h2 {
-    margin-top: 0;
+    margin: 0 0 20px;
     text-align: center;
     color: $primary;
     font-size: 3.0rem;
@@ -21,8 +21,25 @@ main {
   background: linear-gradient(to left, rgba($white, 0.3), rgba($white, 0.3));
   padding: 40px;
   margin-bottom: 5px;
+
+    h3 {
+    margin: 0 0 25px;
+    font-size: 2.2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .voteAverage {
+    margin-bottom: 20px;
+  }
+
+  .overview {
+    margin-bottom: 10px;
+  }
 }
 
 button {
-  margin: 40px auto;
+  margin: 15px auto;
 }

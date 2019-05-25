@@ -3,8 +3,16 @@
 footer {
   background-color: $black;
   color: $white;
+  text-align: center;
+  padding: 5px 0;
 
-  p:first-child {
-    margin-top: 0;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
   }
 }

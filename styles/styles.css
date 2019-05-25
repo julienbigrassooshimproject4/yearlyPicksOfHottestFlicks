@@ -149,7 +149,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   display: none; }
 
 body {
-  font-size: 125%; }
+  font-size: 125%;
+  font-family: "Oswald", sans-serif; }
 
 .wrapper {
   width: 90%;
@@ -258,7 +259,7 @@ main {
   padding: 20px 0;
   background-color: #064A6F; }
   main h2 {
-    margin-top: 0;
+    margin: 0 0 20px;
     text-align: center;
     color: #FFAA3C;
     font-size: 3.0rem;
@@ -276,12 +277,31 @@ main {
   background: linear-gradient(to left, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3));
   padding: 40px;
   margin-bottom: 5px; }
+  .movieInfo h3 {
+    margin: 0 0 25px;
+    font-size: 2.2rem; }
+  .movieInfo p {
+    margin: 0; }
+  .movieInfo .voteAverage {
+    margin-bottom: 20px; }
+  .movieInfo .overview {
+    margin-bottom: 10px; }
 
 button {
-  margin: 40px auto; }
+  margin: 15px auto; }
 
 footer {
   background-color: #011627;
-  color: #Eee; }
-  footer p:first-child {
-    margin-top: 0; }
+  color: #Eee;
+  text-align: center;
+  padding: 5px 0; }
+  footer .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  footer p {
+    margin: 0;
+    font-size: 1rem; }
