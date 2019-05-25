@@ -11,14 +11,18 @@ movieApp.userSubmission = function() {
 
     //error handling: 
     //prevents API's default result from appearing if user attempts to submit an empty string
-    if($('input[type=number]').val() !== '') {
+    if (
+      $("input[type=number]").val() !== "" &&
+      parseInt($("input[type=number]").val()) < 2020 &&
+      parseInt($("input[type=number]").val()) > 1877
+    ) {
       // save user input to variable
-      const userInput = $('input[type=number]').val();
+      const userInput = $("input[type=number]").val();
 
       movieApp.getMovies(userInput);
 
       //empty the search box
-      $('input[type=number]').val('');
+      $("input[type=number]").val("");
     } else {
       movieApp.errorHandler();
     }

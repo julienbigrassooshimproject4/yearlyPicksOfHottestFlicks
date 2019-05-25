@@ -1,5 +1,12 @@
-h1 {
+//basic typography styles
+
+h1, 
+h2 {
   font-family: $headingFont;
-  color: $secondary;
+}
+
+
+h1 {
   text-transform: uppercase;
+  color: $secondary;
 }

@@ -1,13 +1,20 @@
 button,
 input[type=submit] {
-    background: $accent;
-    color: $black;
     border: none;
     border-radius: 5px;
-    padding: 7px 30px;
+    padding: 15px 45px;
     text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+}
+
+input[type=submit] {
+    background: $secondary;
+    color: $white;
 }
 
 button {
     display: block;
+    background: $primary;
+    color: $black;
 }

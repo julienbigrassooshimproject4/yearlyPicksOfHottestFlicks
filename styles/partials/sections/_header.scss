@@ -4,12 +4,10 @@ header {
     background-repeat: no-repeat;
     
     section {
-        border: 1px solid purple;
         width: 50%;
     }
     
     .wrapper {
-        border: 1px solid green;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -25,24 +23,35 @@ h1 {
 }
 
 h2 {
-    // color: $primary;
+    font-family: $bodyFont;
+    font-weight: 400;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 50px;
     .formTop {
         padding-bottom: 2%;
     }
     input[type=number] {
-        background: $accent;
+        background: $secondary;
         border: none;
         padding: 5px;
         width: 160px;
+        color: $white;
         &::placeholder {
             color: $white
         }
+    }
+
+    label {
+        font-size: 1.5rem;
+    }
+
+    input[type=submit] {
+        margin-top: 20px;
     }
 }
 
