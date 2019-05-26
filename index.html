@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Super cool hot movie app</title>
+  <title>Yearly Picks of Hottest Filcks</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,600|Righteous&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
@@ -12,27 +12,29 @@
   
 <header>
   <div class="wrapper">
-    <section>
-      <div class="title">
-        <h1>Yearly Picks of Hottest Flicks</h1>
-      </div>
-      <h2>Enter a year that is significant to you into the field below, and get the hottest movie of that year!</h2>
-    </section>
- 
-    <section>
-      <form action="">
-        <div class="formTop">
-          <label for="year">Enter a year here:</label>
-          <input type="number" id="year" min="1878" max="2019" placeholder="YYYY">
+    <div class="innerWrapper">
+      <section>
+        <div class="title">
+          <h1>Yearly Picks of Hottest Flicks</h1>
+        </div>
+        <h2>Enter a year that is significant to you into the field below, and get the hottest movie of that year!</h2>
+      </section>
+   
+      <section>
+        <form action="">
+          <div class="formTop">
+            <label for="year">Enter a year here:</label>
+            <input type="number" id="year" min="1878" max="2019" placeholder="YYYY">
 
-          <p class='warning hide'>Please enter a valid year between 1878 and 2019!</p>
-        </div>
-        <div class="formBottom">
-          <label for="submit" class="visuallyHidden">submit</label>
-          <input type="submit" id="submit" value="submit">
-        </div>
-      </form>
-    </section>
+            <p class='warning hide'>Please enter a valid year between 1878 and 2019!</p>
+          </div>
+          <div class="formBottom">
+            <label for="submit" class="visuallyHidden">submit</label>
+            <input type="submit" id="submit" value="submit">
+          </div>
+        </form>
+      </section>
+    </div>
   </div>
 </header>
 

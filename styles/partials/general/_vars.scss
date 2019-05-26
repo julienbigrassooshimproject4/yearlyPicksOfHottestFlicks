@@ -1,20 +1,18 @@
 //variables and mixins
 
 //variables
-
 //colors
 $primary: #FFAA3C;
 $secondary: #064A6F;
 $accent: firebrick;
 $black: #011627;
-$white: #Eee;
-
-// #FFAA3C
+$white: #EEE;
 
 //font-families
 $headingFont: 'Righteous', cursive;
 $bodyFont: 'Oswald', sans-serif;
 
+//mixins
 //media query mixin
 @mixin bp($class) {
   @if $class == xlg {
@@ -34,7 +32,7 @@ $bodyFont: 'Oswald', sans-serif;
   }
 
   @else if $class == xs {
-    @media (max-width: 590px) { @content; }
+    @media (max-width: 440px) { @content; }
   }
 
   @else {

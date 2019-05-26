@@ -1,9 +1,11 @@
+//header styles
+
 header {
     background-image: url(../assets/headerPic.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     
-    section {
+    .innerWrapper {
         width: 50%;
 
         @include bp(md) {
@@ -11,7 +13,7 @@ header {
         }
 
         @include bp(sm) {
-            width: 70%;
+            width: 80%;
         }
 
         @include bp(xs) {
@@ -21,24 +23,11 @@ header {
     
     .wrapper {
         height: 100vh;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-    }
-
-    h2 {
-        font-family: $bodyFont;
-        font-weight: 400;
-        font-size: 2rem;
-
-        @include bp(sm) {
-            font-size: 1.6rem;
-        }
     }
 }
 
 h1 {
-    margin-top: 0;
+    margin: 0 auto;
     padding-top: 60px;
     font-family: $headingFont;
     text-transform: uppercase;
@@ -53,24 +42,35 @@ h1 {
     @include bp(sm) {
         font-size: 3rem;
     }
+
+    @include bp(xs) {
+        text-align: center;
+        font-size: 2.2rem;
+    }
 }
 
+header h2 {
+    font-family: $bodyFont;
+    font-weight: 400;
+    font-size: 2rem;
 
+    @include bp(sm) {
+        font-size: 1.6rem;
+    }
 
+    @include bp(xs) {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
 
+//form 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 10% 0 0;
-
-    @include bp(md) {
-        padding-right: 7.5%;
-    }
-
-    .formTop {
-        padding-bottom: 2%;
-    }
+    justify-content: center;
+    padding-top: 20px;
 
     input[type=number] {
         background: $secondary;
@@ -92,6 +92,10 @@ form {
         &:active {
             background-color: $black;
         }
+
+        @include bp(xs) {
+            width: 85%;
+        }
     }
 
     label {
@@ -100,6 +104,11 @@ form {
 
     input[type=submit] {
         margin-top: 10px;
+
+        @include bp(xs) {
+            width: 85%;
+            margin: 10px auto;
+        }
     }
 }
 
@@ -114,6 +123,20 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+
+.formTop,
+.formBottom {
+    @include bp(xs) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 85%;
+    }   
+}
+
+//warning message
 .warning {
     position: relative;
     background: $black;
@@ -126,7 +149,7 @@ input[type="number"] {
 .warning:after {
     content: '';
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 65%;
     width: 0;
     height: 0;

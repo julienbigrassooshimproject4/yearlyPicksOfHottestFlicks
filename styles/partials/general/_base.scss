@@ -5,10 +5,12 @@
     display: none;
 }
 
+//body 
 body {
     font-size: 125%;
     font-family: $bodyFont;
 }
+
 //wrapper
 .wrapper {
     width: 90%;
@@ -16,6 +18,7 @@ body {
     margin: 0 auto;
 }
 
+//img
 img {
     width: 290px;
 }

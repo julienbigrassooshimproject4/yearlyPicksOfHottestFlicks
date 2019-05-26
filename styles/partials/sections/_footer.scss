@@ -7,13 +7,27 @@ footer {
   text-align: center;
   padding: 5px 0;
 
+  @include bp(sm) {
+    height: auto;
+  }
+
   .wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include bp(xs) {
+      flex-direction: column;
+    }
   }
 
   p {
     margin: 0;
     font-size: 1rem;
+    color: darken($white, 20%);
+
+    @include bp(xs) {
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
   }
 }
