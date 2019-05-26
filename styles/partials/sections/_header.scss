@@ -38,9 +38,10 @@ form {
     input[type=number] {
         background: $secondary;
         border: none;
-        padding: 5px;
+        padding: 5px 0 5px;
         width: 160px;
         color: $white;
+        text-align: center;
         &::placeholder {
             color: $white
         }
@@ -61,7 +62,7 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
- 
+
 input[type="number"] {
     -moz-appearance: textfield;
 }

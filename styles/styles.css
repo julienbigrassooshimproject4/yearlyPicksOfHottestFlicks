@@ -172,7 +172,7 @@ button,
 input[type=submit] {
   border: none;
   border-radius: 5px;
-  padding: 15px 45px;
+  padding: 15px 40px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.3px; }
@@ -231,9 +231,10 @@ form {
   form input[type=number] {
     background: #064A6F;
     border: none;
-    padding: 5px;
+    padding: 5px 0 5px;
     width: 160px;
-    color: #Eee; }
+    color: #Eee;
+    text-align: center; }
     form input[type=number]::-webkit-input-placeholder {
       color: #Eee; }
     form input[type=number]:-ms-input-placeholder {
@@ -256,13 +257,14 @@ input[type="number"] {
   -moz-appearance: textfield; }
 
 main {
-  padding: 20px 0;
-  background-color: #064A6F; }
+  padding: 5px 0 10px;
+  background-color: #064A6F;
+  height: calc(100vh - 30px); }
   main h2 {
-    margin: 0 0 20px;
+    margin: 0 0 7px;
     text-align: center;
     color: #FFAA3C;
-    font-size: 3.0rem;
+    font-size: 2.7rem;
     text-transform: uppercase; }
 
 .movieContainer {
@@ -275,24 +277,27 @@ main {
   background: -webkit-linear-gradient(right, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3));
   background: -o-linear-gradient(right, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3));
   background: linear-gradient(to left, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3));
-  padding: 40px;
+  padding: 20px 35px;
   margin-bottom: 5px; }
   .movieInfo h3 {
-    margin: 0 0 25px;
-    font-size: 2.2rem; }
+    margin: 0 0 20px;
+    font-size: 2.2rem;
+    line-height: 2rem; }
   .movieInfo p {
     margin: 0; }
   .movieInfo .voteAverage {
     margin-bottom: 20px; }
   .movieInfo .overview {
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    font-weight: 600; }
 
 button {
-  margin: 15px auto; }
+  margin: 7px auto 0; }
 
 footer {
   background-color: #011627;
   color: #Eee;
+  height: 30px;
   text-align: center;
   padding: 5px 0; }
   footer .wrapper {

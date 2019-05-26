@@ -1,14 +1,15 @@
 //main styles
 
 main {
-  padding: 20px 0;
+  padding: 5px 0 10px;
   background-color: $secondary;
+  height: calc(100vh - 30px);
 
   h2 {
-    margin: 0 0 20px;
+    margin: 0 0 7px;
     text-align: center;
     color: $primary;
-    font-size: 3.0rem;
+    font-size: 2.7rem;
     text-transform: uppercase;
   }
 }
@@ -19,12 +20,13 @@ main {
 
 .movieInfo {
   background: linear-gradient(to left, rgba($white, 0.3), rgba($white, 0.3));
-  padding: 40px;
+  padding: 20px 35px;
   margin-bottom: 5px;
 
     h3 {
-    margin: 0 0 25px;
+    margin: 0 0 20px;
     font-size: 2.2rem;
+    line-height: 2rem;
   }
 
   p {
@@ -37,9 +39,10 @@ main {
 
   .overview {
     margin-bottom: 10px;
+    font-weight: 600;
   }
 }
 
 button {
-  margin: 15px auto;
+  margin: 7px auto 0;
 }
