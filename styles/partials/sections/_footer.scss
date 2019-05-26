@@ -15,7 +15,7 @@ footer {
     display: flex;
     justify-content: space-between;
 
-    @include bp(xs) {
+    @include bp(sm) {
       flex-direction: column;
     }
   }
@@ -25,7 +25,7 @@ footer {
     font-size: 1rem;
     color: darken($white, 20%);
 
-    @include bp(xs) {
+    @include bp(sm) {
       font-size: 0.8rem;
       font-weight: 400;
     }

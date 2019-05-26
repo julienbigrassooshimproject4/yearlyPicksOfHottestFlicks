@@ -341,7 +341,7 @@ main {
   padding: 5px 0 10px;
   background-color: #064A6F;
   height: calc(100vh - 30px); }
-  @media (max-width: 895px) {
+  @media (max-width: 970px) {
     main {
       height: auto; } }
   main h2 {
@@ -437,7 +437,7 @@ footer {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    @media (max-width: 440px) {
+    @media (max-width: 895px) {
       footer .wrapper {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -447,7 +447,7 @@ footer {
     margin: 0;
     font-size: 1rem;
     color: #bbbbbb; }
-    @media (max-width: 440px) {
+    @media (max-width: 895px) {
       footer p {
         font-size: 0.8rem;
         font-weight: 400; } }

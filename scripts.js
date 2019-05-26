@@ -35,7 +35,7 @@ movieApp.errorHandler = function() {
   //displays error message
   $('.warning').removeClass('hide');
   //removes error message when user clicks or selects into input field
-  $('input[type=number]').on('select click', function(){
+  $('input[type=number]').on('select click focus', function(){
     $('.warning').addClass('hide');
   })
 }

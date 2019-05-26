@@ -5,7 +5,7 @@ main {
   background-color: $secondary;
   height: calc(100vh - 30px);
 
-  @include bp(sm) {
+  @include bp(md) {
     height: auto;
   }
 
