@@ -5,7 +5,7 @@
 //colors
 $primary: #FFAA3C;
 $secondary: #064A6F;
-$accent: #3AB795;
+$accent: firebrick;
 $black: #011627;
 $white: #Eee;
 
@@ -15,3 +15,29 @@ $white: #Eee;
 $headingFont: 'Righteous', cursive;
 $bodyFont: 'Oswald', sans-serif;
 
+//media query mixin
+@mixin bp($class) {
+  @if $class == xlg {
+    @media (min-width: 1440px) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (min-width: 960px) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media (min-width: 700px) { @content; }
+  }
+ 
+  @else if $class == sm {
+    @media (min-width: 670px) { @content; }
+  }
+
+  @else if $class == xs {
+    @media (min-width: 320px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg, xlg";
+  }
+}

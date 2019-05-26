@@ -160,14 +160,6 @@ body {
 img {
   width: 290px; }
 
-h1,
-h2 {
-  font-family: "Righteous", cursive; }
-
-h1 {
-  text-transform: uppercase;
-  color: #064A6F; }
-
 button,
 input[type=submit] {
   border: none;
@@ -178,13 +170,26 @@ input[type=submit] {
   letter-spacing: 1.3px; }
 
 input[type=submit] {
+  border: 5px solid #064A6F;
   background: #064A6F;
   color: #Eee; }
+  input[type=submit]:hover, input[type=submit]:focus {
+    background-color: #011627;
+    border: 5px solid #011627; }
+  input[type=submit]:active {
+    border: 5px solid firebrick; }
 
 button {
   display: block;
+  border: 5px solid #FFAA3C;
   background: #FFAA3C;
   color: #011627; }
+  button:hover, button:focus {
+    border: 5px solid #011627;
+    background-color: #011627;
+    color: #Eee; }
+  button:active {
+    border: 5px solid firebrick; }
 
 header {
   background-image: url(../assets/headerPic.jpg);
@@ -207,6 +212,9 @@ header {
 
 h1 {
   margin-top: 0;
+  font-family: "Righteous", cursive;
+  text-transform: uppercase;
+  color: #064A6F;
   font-size: 4rem;
   line-height: 1; }
 
@@ -230,7 +238,7 @@ form {
     padding-bottom: 2%; }
   form input[type=number] {
     background: #064A6F;
-    border: none;
+    border: 5px solid #064A6F;
     padding: 5px 0 5px;
     width: 160px;
     color: #Eee;
@@ -243,6 +251,10 @@ form {
       color: #Eee; }
     form input[type=number]::placeholder {
       color: #Eee; }
+    form input[type=number]:focus {
+      border: 5px solid firebrick; }
+    form input[type=number]:active {
+      background-color: #011627; }
   form label {
     font-size: 1.5rem; }
   form input[type=submit] {

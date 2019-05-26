@@ -9,12 +9,35 @@ input[type=submit] {
 }
 
 input[type=submit] {
+    border: 5px solid $secondary;
     background: $secondary;
     color: $white;
+
+    &:hover,
+    &:focus {
+        background-color: $black;
+        border: 5px solid $black;
+    }
+
+    &:active {
+        border: 5px solid $accent
+    }
 }
 
 button {
     display: block;
+    border: 5px solid $primary;
     background: $primary;
     color: $black;
+
+    &:hover,
+    &:focus {
+        border: 5px solid $black;
+        background-color: $black;
+        color: $white;
+    }
+
+    &:active {
+        border: 5px solid $accent;
+    }
 }
