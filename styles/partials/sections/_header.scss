@@ -6,37 +6,67 @@ header {
     section {
         width: 50%;
 
-        
+        @include bp(md) {
+            width: 60%;
+        }
+
+        @include bp(sm) {
+            width: 70%;
+        }
+
+        @include bp(xs) {
+            width: 100%;
+        }
     }
     
     .wrapper {
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+    }
+
+    h2 {
+        font-family: $bodyFont;
+        font-weight: 400;
+        font-size: 2rem;
+
+        @include bp(sm) {
+            font-size: 1.6rem;
+        }
     }
 }
 
 h1 {
     margin-top: 0;
+    padding-top: 60px;
     font-family: $headingFont;
     text-transform: uppercase;
     color: $secondary;
     font-size: 4rem;
     line-height: 1;
 
+    @include bp(md) {
+        font-size: 3.5rem;
+    }
+
+    @include bp(sm) {
+        font-size: 3rem;
+    }
 }
 
-h2 {
-    font-family: $bodyFont;
-    font-weight: 400;
-}
+
+
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    padding: 20px 10% 0 0;
+
+    @include bp(md) {
+        padding-right: 7.5%;
+    }
 
     .formTop {
         padding-bottom: 2%;
@@ -51,7 +81,8 @@ form {
         text-align: center;
 
         &::placeholder {
-            color: $white
+            color: $white;
+            letter-spacing: 3px;
         }
 
         &:focus {
@@ -68,7 +99,7 @@ form {
     }
 
     input[type=submit] {
-        margin-top: 20px;
+        margin-top: 10px;
     }
 }
 
@@ -81,4 +112,27 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.warning {
+    position: relative;
+    background: $black;
+    color: $white;
+    border-radius: .4em;
+    padding: 5px;
+    margin-bottom: 0;
+}
+
+.warning:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 65%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom-color: $black;
+    border-top: 0;
+    margin-left: -20px;
+    margin-top: -20px;
 }

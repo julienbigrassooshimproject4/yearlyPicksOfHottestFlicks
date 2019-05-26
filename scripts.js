@@ -132,7 +132,7 @@ movieApp.getMovies = function(userInput) {
 movieApp.displayMovie = function(movie, userInput) {
   $('.userYear').text(userInput);
   const $movieTitle = $(`<h3>`).text(movie.title);
-  const $voteCount = $(`<p>`).text(`Vote Count: ${movie.vote_count}`);
+  const $voteCount = $(`<p class="voteCount">`).text(`Vote Count: ${movie.vote_count}`);
   const $voteAverage = $(`<p class="voteAverage">`).text(`Vote Average: ${movie.vote_average}`);
   const $overviewTitle = $(`<p class="overview">`).text(`Overview:`);
   const $overview = $(`<p>`).text(movie.overview);

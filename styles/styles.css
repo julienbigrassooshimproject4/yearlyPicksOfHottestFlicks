@@ -164,7 +164,7 @@ button,
 input[type=submit] {
   border: none;
   border-radius: 5px;
-  padding: 15px 40px;
+  padding: 8px 40px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.3px; }
@@ -197,30 +197,39 @@ header {
   background-repeat: no-repeat; }
   header section {
     width: 50%; }
+    @media (max-width: 970px) {
+      header section {
+        width: 60%; } }
+    @media (max-width: 895px) {
+      header section {
+        width: 70%; } }
+    @media (max-width: 590px) {
+      header section {
+        width: 100%; } }
   header .wrapper {
-    height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    height: 100vh; }
+  header h2 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 2rem; }
+    @media (max-width: 895px) {
+      header h2 {
+        font-size: 1.6rem; } }
 
 h1 {
   margin-top: 0;
+  padding-top: 60px;
   font-family: "Righteous", cursive;
   text-transform: uppercase;
   color: #064A6F;
   font-size: 4rem;
   line-height: 1; }
-
-h2 {
-  font-family: "Oswald", sans-serif;
-  font-weight: 400; }
+  @media (max-width: 970px) {
+    h1 {
+      font-size: 3.5rem; } }
+  @media (max-width: 895px) {
+    h1 {
+      font-size: 3rem; } }
 
 form {
   display: -webkit-box;
@@ -233,7 +242,10 @@ form {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 50px; }
+  padding: 20px 10% 0 0; }
+  @media (max-width: 970px) {
+    form {
+      padding-right: 7.5%; } }
   form .formTop {
     padding-bottom: 2%; }
   form input[type=number] {
@@ -244,13 +256,17 @@ form {
     color: #Eee;
     text-align: center; }
     form input[type=number]::-webkit-input-placeholder {
-      color: #Eee; }
+      color: #Eee;
+      letter-spacing: 3px; }
     form input[type=number]:-ms-input-placeholder {
-      color: #Eee; }
+      color: #Eee;
+      letter-spacing: 3px; }
     form input[type=number]::-ms-input-placeholder {
-      color: #Eee; }
+      color: #Eee;
+      letter-spacing: 3px; }
     form input[type=number]::placeholder {
-      color: #Eee; }
+      color: #Eee;
+      letter-spacing: 3px; }
     form input[type=number]:focus {
       border: 5px solid firebrick; }
     form input[type=number]:active {
@@ -258,7 +274,7 @@ form {
   form label {
     font-size: 1.5rem; }
   form input[type=submit] {
-    margin-top: 20px; }
+    margin-top: 10px; }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -267,6 +283,27 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; }
+
+.warning {
+  position: relative;
+  background: #011627;
+  color: #Eee;
+  border-radius: .4em;
+  padding: 5px;
+  margin-bottom: 0; }
+
+.warning:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 65%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #011627;
+  border-top: 0;
+  margin-left: -20px;
+  margin-top: -20px; }
 
 main {
   padding: 5px 0 10px;
@@ -278,11 +315,19 @@ main {
     color: #FFAA3C;
     font-size: 2.7rem;
     text-transform: uppercase; }
+    @media (max-width: 970px) {
+      main h2 {
+        font-size: 2.0rem; } }
 
 .movieContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+
+.poster {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center; }
 
 .movieInfo {
   background: -webkit-gradient(linear, right top, left top, from(rgba(238, 238, 238, 0.3)), to(rgba(238, 238, 238, 0.3)));
@@ -291,12 +336,22 @@ main {
   background: linear-gradient(to left, rgba(238, 238, 238, 0.3), rgba(238, 238, 238, 0.3));
   padding: 20px 35px;
   margin-bottom: 5px; }
+  @media (max-width: 895px) {
+    .movieInfo {
+      margin-left: 20px; } }
   .movieInfo h3 {
     margin: 0 0 20px;
     font-size: 2.2rem;
     line-height: 2rem; }
+    @media (max-width: 970px) {
+      .movieInfo h3 {
+        font-size: 1.6rem; } }
   .movieInfo p {
     margin: 0; }
+  @media (max-width: 970px) {
+    .movieInfo .voteCount,
+    .movieInfo .voteAverage {
+      font-size: 0.9rem; } }
   .movieInfo .voteAverage {
     margin-bottom: 20px; }
   .movieInfo .overview {

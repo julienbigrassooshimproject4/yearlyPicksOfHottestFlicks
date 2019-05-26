@@ -18,23 +18,23 @@ $bodyFont: 'Oswald', sans-serif;
 //media query mixin
 @mixin bp($class) {
   @if $class == xlg {
-    @media (min-width: 1440px) { @content; }
+    @media (max-width: 1440px) { @content; }
   }
  
   @else if $class == lg {
-    @media (min-width: 960px) { @content; }
+    @media (max-width: 1084px) { @content; }
   }
  
   @else if $class == md {
-    @media (min-width: 700px) { @content; }
+    @media (max-width: 970px) { @content; }
   }
  
   @else if $class == sm {
-    @media (min-width: 670px) { @content; }
+    @media (max-width: 895px) { @content; }
   }
 
   @else if $class == xs {
-    @media (min-width: 320px) { @content; }
+    @media (max-width: 590px) { @content; }
   }
 
   @else {

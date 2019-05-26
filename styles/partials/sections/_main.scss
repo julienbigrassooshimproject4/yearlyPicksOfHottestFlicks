@@ -11,6 +11,10 @@ main {
     color: $primary;
     font-size: 2.7rem;
     text-transform: uppercase;
+
+    @include bp(md) {
+      font-size: 2.0rem;
+    }
   }
 }
 
@@ -18,19 +22,38 @@ main {
   display: flex;
 }
 
+.poster {
+  align-self: center;
+}
+
 .movieInfo {
   background: linear-gradient(to left, rgba($white, 0.3), rgba($white, 0.3));
   padding: 20px 35px;
   margin-bottom: 5px;
 
+  @include bp(sm) {
+    margin-left: 20px;
+  }
+
     h3 {
     margin: 0 0 20px;
     font-size: 2.2rem;
     line-height: 2rem;
+
+    @include bp(md) {
+      font-size: 1.6rem;
+    }
   }
 
   p {
     margin: 0;
+  }
+
+  .voteCount,
+  .voteAverage {
+    @include bp(md) {
+      font-size: 0.9rem;
+    }
   }
 
   .voteAverage {
