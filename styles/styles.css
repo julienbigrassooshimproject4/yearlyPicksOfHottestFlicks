@@ -217,7 +217,7 @@ h1 {
   color: #064A6F;
   font-size: 4rem;
   line-height: 1; }
-  @media (max-width: 970px) {
+  @media (max-width: 1084px) {
     h1 {
       font-size: 3.5rem; } }
   @media (max-width: 895px) {
@@ -234,7 +234,8 @@ header h2 {
   font-size: 2rem; }
   @media (max-width: 1084px) {
     header h2 {
-      margin-bottom: 0; } }
+      margin-bottom: 0;
+      line-height: 1.2; } }
   @media (max-width: 895px) {
     header h2 {
       font-size: 1.6rem; } }
@@ -256,8 +257,7 @@ form {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
-  padding-top: 20px; }
+  justify-content: center; }
   form input[type=number] {
     background: #064A6F;
     border: 5px solid #064A6F;
