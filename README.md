@@ -15,6 +15,6 @@ Based on the two AJAX calls and the user's year input, the app displays the post
 ## Programming Languages
 
 - HTML
-- CSS
+- CSS / SASS
 - JavaScript / jQuery
 
