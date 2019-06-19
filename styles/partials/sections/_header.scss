@@ -35,7 +35,7 @@ h1 {
     font-size: 4rem;
     line-height: 1;
 
-    @include bp(md) {
+    @include bp(lg) {
         font-size: 3.5rem;
     }
 
@@ -54,6 +54,11 @@ header h2 {
     font-weight: 400;
     font-size: 2rem;
 
+    @include bp(lg) {
+        margin-bottom: 0;
+        line-height: 1.2;
+    }
+
     @include bp(sm) {
         font-size: 1.6rem;
     }
@@ -70,7 +75,6 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
 
     input[type=number] {
         background: $secondary;
